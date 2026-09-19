@@ -3,5 +3,5 @@
 @section('title', 'My Usage')
 
 @section('content')
-    <h1 class="text-3xl font-semibold tracking-tight text-slate-900">My Usage</h1>
+    <H1 class="bg-blue-500 text-white p-4 rounded-lg">My Usage</H1>
 @endsection

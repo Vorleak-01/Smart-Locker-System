@@ -3,7 +3,7 @@
 ])
 
 @php
-    $userRole = 'user';
+    $userRole = auth()->user()->role ?? 'admin';
     $isStaff = in_array($userRole, ['admin', 'staff'], true);
     $displayName = auth()->user()->name ?? ($isStaff ? 'Admin' : 'User');
     $initial = strtoupper(substr($displayName, 0, 1));
