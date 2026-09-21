@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->boolean('resolved')->default(false);
             $table->timestamps();
+
         });
     }
 
