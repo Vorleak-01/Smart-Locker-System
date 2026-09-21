@@ -89,13 +89,43 @@
                         </div>
                     </div>
                 </article>
+                <article class=" bg-slate-50 px-5 py-5 rounded-lg border border-slate-200 shadow-sm transition hover:border-blue-200 hover:bg-white hover:shadow-sm">
+                    <div class="flex items-start justify-between gap-3">
+                        <div>
+                            <h2 class="text-base font-semibold text-slate-900">Central Mall</h2>
+                            <p class="mt-1 text-sm text-slate-500">36 lockers</p>
+                        </div>
+                        <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">Active</span>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-500"><i class="fa-solid fa-location-dot mr-2 text-blue-700" aria-hidden="true"></i>184 Market St</p>
+                    <div class="mt-5 flex items-center justify-between border-t border-slate-200 pt-4">
+                        <a href="/lockers" class="text-sm font-semibold text-blue-800 hover:underline">View lockers</a>
+                        <div class="flex items-center gap-3">
+                        <button type="button" class="text-slate-400 hover:text-blue-700" aria-label="Edit Central Mall"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+                        <button type="button" class="text-slate-400 hover:text-red-600" aria-label="Delete Central Mall"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </article>
+                <article class=" bg-slate-50 px-5 py-5 rounded-lg border border-slate-200 shadow-sm transition hover:border-blue-200 hover:bg-white hover:shadow-sm">
+                    <div class="flex items-start justify-between gap-3">
+                        <div>
+                            <h2 class="text-base font-semibold text-slate-900">Central Mall</h2>
+                            <p class="mt-1 text-sm text-slate-500">36 lockers</p>
+                        </div>
+                        <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">Active</span>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-500"><i class="fa-solid fa-location-dot mr-2 text-blue-700" aria-hidden="true"></i>184 Market St</p>
+                    <div class="mt-5 flex items-center justify-between border-t border-slate-200 pt-4">
+                        <a href="/lockers" class="text-sm font-semibold text-blue-800 hover:underline">View lockers</a>
+                        <div class="flex items-center gap-3">
+                        <button type="button" class="text-slate-400 hover:text-blue-700" aria-label="Edit Central Mall"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+                        <button type="button" class="text-slate-400 hover:text-red-600" aria-label="Delete Central Mall"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </article>
 
             </div>
-
-
-
         </section>
-
 
     </div>
 @endsection
