@@ -75,7 +75,7 @@
 
 <script>
     const startedAt = new Date("{{ $lockerUsage->started_at }}").getTime();
-    const maxDurationMs = 4 * 60 * 60 * 1000; // example: 4 hour max session
+    const maxDurationMs = 1 * 60 * 60 * 1000; // example: 4 hour max session
 
     function pad(n) {
         return String(n).padStart(2, '0');

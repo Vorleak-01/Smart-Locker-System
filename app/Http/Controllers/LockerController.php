@@ -30,15 +30,18 @@ class LockerController extends Controller
 
         return redirect("/locker-usages/{$usage->id}");
     }
-        public function index()
+
+    public function index()
     {
         $lockers = Locker::with('location')->get();
 
-        return view('lockers.index', compact('lockers'));
+        return view('user.lockers.index', compact('lockers'));
     }
 
     public function userIndex()
     {
-        return view('user.lockers.index');
+        $lockers = Locker::with('location')->get();
+
+        return view('user.lockers.index', compact('lockers'));
     }
 }

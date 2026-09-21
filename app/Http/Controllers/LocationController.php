@@ -13,8 +13,9 @@ class LocationController extends Controller
             $q->where('status', 'available');
         }])->get();
 
-        return view('locations.search', compact('locations'));
+        return view('user.locations.search', compact('locations'));
     }
+
     public function show(Location $location)
     {
         $lockers = $location->lockers;
@@ -23,20 +24,29 @@ class LocationController extends Controller
         $inUse = $lockers->where('status', 'in_use')->count();
         $maintenance = $lockers->where('status', 'maintenance')->count();
 
-        return view('locations.show', compact('location', 'available', 'inUse', 'maintenance'));
+        return view('user.locations.show', compact('location', 'available', 'inUse', 'maintenance'));
     }
-        public function lockers(Location $location)
+
+    public function lockers(Location $location)
     {
         $lockers = $location->lockers;
 
-        return view('locations.lockers', compact('location', 'lockers'));
+        return view('user.locations.lockers', compact('location', 'lockers'));
     }
+
     public function index()
-{
-    $locations = Location::withCount('lockers')->get();
+    {
+        $locations = Location::withCount('lockers')->get();
 
-    return view('locations.index', compact('locations'));
+        return view('user.locations.index', compact('locations'));
+    }
+
+    public function userIndex()
+    {
+        $locations = Location::withCount(['lockers as free_count' => function ($q) {
+            $q->where('status', 'available');
+        }])->get();
+
+        return view('user.locations.search', compact('locations'));
+    }
 }
-
-}
-
