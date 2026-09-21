@@ -31,4 +31,12 @@ class LocationController extends Controller
 
         return view('locations.lockers', compact('location', 'lockers'));
     }
+    public function index()
+{
+    $locations = Location::withCount('lockers')->get();
+
+    return view('locations.index', compact('locations'));
 }
+
+}
+
