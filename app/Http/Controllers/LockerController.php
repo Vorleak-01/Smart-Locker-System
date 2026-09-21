@@ -36,4 +36,9 @@ class LockerController extends Controller
 
         return view('lockers.index', compact('lockers'));
     }
+
+    public function userIndex()
+    {
+        return view('user.lockers.index');
+    }
 }
