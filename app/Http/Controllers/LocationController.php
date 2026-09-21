@@ -10,4 +10,14 @@ class LocationController extends Controller
     {
         return view('locations.index');
     }
+
+    public function create()
+    {
+        return view('locations.create');
+    }
+
+    public function userIndex()
+    {
+        return view('user.locations.index');
+    }
 }
