@@ -8,10 +8,26 @@ use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/login');
 
+// Guest only
+Route::middleware('guest')->group(function () {
+
+    Route::get('/login', [LoginController::class, 'show'])
+        ->name('login');
+
+    Route::post('/login', [LoginController::class, 'store'])
+        ->name('login.store');
+
+    Route::get('/register', [RegisterController::class, 'show'])
+        ->name('register');
+
+    Route::post('/register', [RegisterController::class, 'store'])
+        ->name('register.store');
+
+    Route::get('/forgot-password', fn () => 'Forgot password page coming soon')
+        ->name('password.request');
+});
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/user/dashboard', [DashboardController::class, 'userIndex'])->name('user.dashboard');
@@ -31,4 +47,9 @@ Route::get('/user/profile', function () {
     return view('user.profile.index');
 })->name('user.profile');
 
+    Route::get('/dashboard', fn () => view('dashboard'))
+        ->name('dashboard');
 
+    Route::post('/logout', [LoginController::class, 'destroy'])
+        ->name('logout');
+});
