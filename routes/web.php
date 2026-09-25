@@ -8,9 +8,7 @@ use App\Http\Controllers\LockerUsageController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/login');
 
 Route::get('/locations/search', [LocationController::class, 'search']);
 Route::get('/locations/{location}', [LocationController::class, 'show']);
@@ -38,4 +36,9 @@ Route::get('/user/profile', function () {
     return view('user.profile.index');
 })->name('user.profile');
 
+    Route::get('/dashboard', fn () => view('dashboard'))
+        ->name('dashboard');
 
+    Route::post('/logout', [LoginController::class, 'destroy'])
+        ->name('logout');
+});
